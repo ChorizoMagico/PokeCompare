@@ -16,7 +16,7 @@ class PokemonEspecie(models.Model):
 
 class Pokemon(models.Model):
 
-    apodo = models.CharField(max_length=100, blank=True)
+    apodo = models.CharField(max_length=100, blank=True, unique=True)
 
     usuario = models.ForeignKey(User, 
         on_delete=models.CASCADE, 
@@ -125,6 +125,9 @@ class Equipo(models.Model):
         on_delete=models.CASCADE,
         related_name="equipos"
     )
+
+    principal = models.BooleanField(False)
+
     pokemones = models.ManyToManyField(Pokemon, related_name="equipos")
 
 
