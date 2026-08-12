@@ -19,11 +19,13 @@ class PokemonSerializer(serializers.ModelSerializer):
         fields = ["id", "apodo", "usuario", "naturaleza", "especie", "nivel", "iv_hp", "iv_ataque", "iv_defensa", 
                   "iv_ataque_especial", "iv_defensa_especial", "iv_velocidad", "ev_hp", "ev_ataque", "ev_defensa",
                   "ev_ataque_especial", "ev_defensa_especial", "ev_velocidad"]
+        read_only_fields = ["usuario"]
 
 class EquipoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Equipo
-        fields = ["id", "nombre", "usuario", "pokemones"]
+        fields = ["id", "nombre", "usuario", "principal", "pokemones"]
+        read_only_fields = ["usuario"]
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
