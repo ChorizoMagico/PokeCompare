@@ -1,2 +1,2 @@
-# PokeCompare
-Una página para comparar equipos de pokemon competitivo
+# TeamCompare
+Una página para comparar equipos de --p#o#k#e#m#o#n-- competitivo
